@@ -4,9 +4,9 @@ VidLabeller is a simple UI that allows anyone to turn .mp4 files in to training 
 
 ## Setup
 
-### Python Version
+### Python
 
-In order run VidLabeller locally you must ensure a python3 environment set up and active. This can be done using conda or virtualenv. Once this environment is active `python --version` should return `Python 3.6.10`.
+In order run VidLabeller locally you must ensure a python3 environment is set up and active. This can be done using conda or virtualenv. Once this environment is active `python --version` should return `Python 3.6.10`.
 
 ### Dependencies
 
@@ -16,7 +16,15 @@ This package is built using matplotlib graphics and OpenCV video processing. In 
 
 ## Creating training data
 
-As an example, we consider contamination detection in recycling trucks. To begin we need a video that showcases the environment we ultimately want our model to detect objects in. Once the video is stored locally it can be opened in VidLabeller. As shown below, our UI allows you to easily transition between frames and label ROIs:
+Once dependencies have been istalled its simple, just run:
+
+    python main.py --videoPath <mp4 path> --outputPath <output directory path>
+
+As an example, we consider contamination detection in recycling trucks. In order to explore simply run:
+
+    python main.py
+
+As shown below the UI that is launched allows you to easily transition between frames and label ROIs:
 
 ![Alt Text](./documentation/gifs/use-case.gif)
 
