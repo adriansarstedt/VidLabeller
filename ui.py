@@ -3,12 +3,15 @@ from matplotlib.widgets import Button
 import cv2
 
 from canvas import Canvas
+from transform import saveRoiData
 
 class VidUI:
-    def __init__(self, videoPath):
+    def __init__(self, videoPath, outputPath):
+        self.outputPath = outputPath
+        self.vidcap = cv2.VideoCapture(videoPath)
+
         self.frame = 0
         self.speed = 100
-        self.vidcap = cv2.VideoCapture(videoPath)
         self.rois = {}
 
         self.fig = plt.figure(figsize=(10, 6))
@@ -59,6 +62,7 @@ class VidUI:
         self.rois[self.frame] = self.canvas.rois
         self.frame += self.speed
         self.setTitle()
+        self.save()
         self.open()
 
     def skip(self, event):
@@ -66,7 +70,8 @@ class VidUI:
         self.setTitle()
         self.open()
 
-    def save(self, event):
+    def save(self):
+        saveRoiData(self.rois, self.outputPath)
         self.setTitle()
         print(self.rois)
 
