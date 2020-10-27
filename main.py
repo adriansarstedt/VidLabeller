@@ -2,14 +2,12 @@ from ui import VidUI
 import os
 
 vidPath = 'data/sample-vids/side-loader.mp4'
-outputName = 'side-loader-labels.json'
+outputPath = 'data/outputs/'
 
 if os.path.exists(vidPath):
-    path = vidPath.split("/")
-    outputPath = "/".join(path[:-1]+[outputName])
-
+    if not os.path.exists(outputPath):
+        os.mkdir(outputPath)
     v = VidUI(vidPath, outputPath)
     v.open()
 else:
-
     print(f'Cannot find file with path: {vidPath}')

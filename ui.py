@@ -71,7 +71,8 @@ class VidUI:
         self.open()
 
     def save(self):
-        saveRoiData(self.rois, self.outputPath)
+        saveRoiData(self.rois, self.outputPath+"ROIs.json")
+        cv2.imwrite(self.outputPath+"frame%d.jpg" % self.frame, self.image)
         self.setTitle()
         print(self.rois)
 
@@ -80,6 +81,6 @@ class VidUI:
 
     def open(self):
         self.vidcap.set(self.SET_FRAME_CONSTANT, self.frame)
-        success, image = self.vidcap.read()
-        self.canvas.open(image)
+        success, self.image = self.vidcap.read()
+        self.canvas.open(self.image)
 
