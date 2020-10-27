@@ -1,5 +1,6 @@
-from ui import VidUI
 import os
+
+from src.ui import VidUI
 
 vidPath = 'data/sample-vids/side-loader.mp4'
 outputPath = 'data/outputs/'

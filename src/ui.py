@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 from matplotlib.widgets import Button
 import cv2
 
-from canvas import Canvas
-from transform import saveRoiData
+from src.canvas import Canvas
+from src.exporter import saveRoiData
 
 class VidUI:
     def __init__(self, videoPath, outputPath):
