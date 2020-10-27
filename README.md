@@ -4,6 +4,8 @@ VidLabeller is a simple UI that allows anyone to turn .mp4 files in to training 
 
 ## Example
 
+![Alt Text](./documentation/assets/use-case.gif)
+
 The following giph shows an example of an object detection model in action. Here a model is detecting platic bag contaminants in a recycling truck. The data used to train this model was made using VidLabeller.
 
-![Alt Text](./documentation/assets/example.gif)
+![Alt Text](./documentation/assets/model-in-action.gif)
